@@ -192,12 +192,13 @@ const patientLink = document.getElementById('patient-link');
 const doctorLink = document.getElementById('doctor-link');
 const adminLink = document.getElementById('admin-link');
 
-// Add a click event listener to the "Patient" link
+var originalHTML; // Variable to store the original HTML content
+
 patientLink.addEventListener('click', event => {
     event.preventDefault();
 
-    // Send an AJAX request to the Express server
-    fetch('/patient') // You may need to specify the full URL if the server is on a different domain
+    // Send an AJAX request to retrieve the data from the server
+    fetch('/patient')
         .then(response => {
             if (response.ok) {
                 return response.text();
@@ -206,21 +207,43 @@ patientLink.addEventListener('click', event => {
             }
         })
         .then(data => {
-            // Assuming the server sends back the HTML content to display
-            const content = document.getElementById('content');
-            content.innerHTML = data;
+            // Store the original HTML content
+            originalHTML = document.documentElement.innerHTML;
+
+            // Add a unique identifier to the new data
+            const newData = `<body style="background-color: lightgray;">${data}</body>`;
+
+            // Replace the entire page content with the new data
+            document.documentElement.innerHTML = newData;
+
+            // Add a "Return" button to the new content
+            const returnButton = document.createElement('button');
+            returnButton.textContent = 'Return';
+            returnButton.addEventListener('click', () => {
+                restoreOriginalContent();
+            });
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
 });
 
+
+function restoreOriginalContent() {
+    if (originalHTML) {
+        document.documentElement.innerHTML = originalHTML;
+        originalHTML = null; 
+    }
+}
+
+
+var originalHTML; // Variable to store the original HTML content
 
 doctorLink.addEventListener('click', event => {
     event.preventDefault();
 
-    // Send an AJAX request to the Express server
-    fetch('/doctor') // You may need to specify the full URL if the server is on a different domain
+    // Send an AJAX request to retrieve the data from the server
+    fetch('/doctor')
         .then(response => {
             if (response.ok) {
                 return response.text();
@@ -229,14 +252,34 @@ doctorLink.addEventListener('click', event => {
             }
         })
         .then(data => {
-            // Assuming the server sends back the HTML content to display
-            const content = document.getElementById('content');
-            content.innerHTML = data;
+            // Store the original HTML content
+            originalHTML = document.documentElement.innerHTML;
+
+            // Add a unique identifier to the new data
+            const newData = `<body style="background-color: lightgray;">${data}</body>`;
+
+            // Replace the entire page content with the new data
+            document.documentElement.innerHTML = newData;
+
+            // Add a "Return" button to the new content
+            const returnButton = document.createElement('button');
+            returnButton.textContent = 'Return';
+            returnButton.addEventListener('click', () => {
+                restoreOriginalContent();
+            });
         })
         .catch(error => {
             console.error('There was a problem with the fetch operation:', error);
         });
 });
+
+
+function restoreOriginalContent() {
+    if (originalHTML) {
+        document.documentElement.innerHTML = originalHTML;
+        originalHTML = null; 
+    }
+}
 
 adminLink.addEventListener('click', event => {
     event.preventDefault();
