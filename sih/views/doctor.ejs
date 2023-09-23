@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Information Form</title>
+    <link rel="stylesheet" href="/css/doctor.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Doctor Information</h1>
+        <form action="/submit-doctor" method="POST">
+            <!-- Doctor Information -->
+            <div class="form-group">
+                <label for="doctorName">Doctor Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="doctorUID">Doctor UID:</label>
+                <input type="text" id="doctorUID" name="doctorUID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="specialization">Specialization:</label>
+                <input type="text" id="specialization" name="specialization" required>
+            </div>
+
+            <div class="form-group">
+                <label for="startOfDay">Start of Day:</label>
+                <input type="time" id="startOfDay" name="startOfDay" required>
+            </div>
+
+            <div class="form-group">
+                <label for="endOfDay">End of Day:</label>
+                <input type="time" id="endOfDay" name="endOfDay" required>
+            </div>
+
+            <div class="form-group">
+                <label for="holiday">Holiday:</label>
+                <input type="text" id="holiday" name="holiday">
+            </div>
+
+            <div class="form-group">
+                <label for="available">Available:</label>
+                <input type="text" id="available" name="available">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

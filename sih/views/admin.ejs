@@ -1,0 +1,63 @@
+<!--
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <div>
+        <ul>
+            <% for (let i of admin_list) { %>
+                <li>
+                    <p><%= i.patientName %></p>
+                    <p><%= i.patientAge %></p>
+                    <p><%= i.gender %></p>
+                    <p><%= i.contactInfo %></p>
+                    <p><%= i.address %></p>
+                    <p><%= i.medicalHistory %></p>
+                    <p><%= i.preferredDoctor %></p>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Information</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Patient Age</th>
+                    <th>Gender</th>
+                    <th>Contact Info</th>
+                    <th>Address</th>
+                    <th>Medical History</th>
+                    <th>Preferred Doctor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i of admin_list) { %>
+                    <tr>
+                        <td><%= i.patientName %></td>
+                        <td><%= i.patientAge %></td>
+                        <td><%= i.gender %></td>
+                        <td><%= i.contactInfo %></td>
+                        <td><%= i.address %></td>
+                        <td><%= i.medicalHistory %></td>
+                        <td><%= i.preferredDoctor %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

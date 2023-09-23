@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Hospital Portal</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="navbar-logo">
+                Hospital Portal
+                <i class="fa fa-typo3"></i>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/" class="nav-links">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about" class="nav-links">About</a>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-links" id="services-link">
+                        Services
+                        <i class="fa fa-bars menu-icon"></i>
+                    </div>
+                    <ul class="nav-menu-sub">
+                        <li class="nav-item">
+                            <a class="nav1-links patient" id="patient-link">Patient</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav1-links doctor" id="doctor-link">Doctor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav1-links admin" id="admin-link">Admin</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact" class="nav-links">Contact</a>
+                </li>
+            </ul>
+            
+            <button class="btn btn-outline-light my-2 my-lg-0 sign-up-button" type="button">Sign Up</button>
+        </div>
+    </nav>
+
+
+    
+
+    <!-- Content -->
+    <div id="content" class="home">
+        <h1>Home</h1>
+    </div>
+
+    <body>
+        <div class="footer-container">
+            <section class="footer-subscription">
+                <p class="footer-subscription-heading">
+                    Join the Health newsletter to receive our best healthcare facility
+                </p>
+                <p class="footer-subscription-text">
+                    You can unsubscribe at any time.
+                </p>
+                <div class="input-areas">
+                    <form id="subscription-form">
+                        <input
+                            class="footer-input"
+                            name="email"
+                            type="email"
+                            placeholder="Your Email"
+                        />
+                        <button type="submit" class="btn btn--outline">Subscribe</button>
+                    </form>
+                </div>
+            </section>
+            <div class="footer-links">
+                <div class="footer-link-wrapper">
+                    <div class="footer-link-items">
+                        <h2>About Us</h2>
+                        <a href="/sign-up">How it works</a>
+                        <a href="/">Testimonials</a>
+                        <a href="/">Careers</a>
+                        <a href="/">Investors</a>
+                        <a href="/">Terms of Service</a>
+                    </div>
+                    <div class="footer-link-items">
+                        <h2>Contact Us</h2>
+                        <a href="/">Contact</a>
+                        <a href="/">Support</a>
+                        <a href="/">Destinations</a>
+                        <a href="/">Sponsorships</a>
+                    </div>
+                </div>
+                <div class="footer-link-wrapper">
+                    <div class="footer-link-items">
+                        <h2>Videos</h2>
+                        <a href="/">Submit Video</a>
+                        <a href="/">Ambassadors</a>
+                        <a href="/">Agency</a>
+                        <a href="/">Influencer</a>
+                    </div>
+                    <div class="footer-link-items">
+                        <h2>Social Media</h2>
+                        <a href="/">Instagram</a>
+                        <a href="/">Facebook</a>
+                        <a href="/">Youtube</a>
+                        <a href="/">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <section class="social-media">
+                <div class="social-media-wrap">
+                    <div class="footer-logo">
+                        <a href="/" class="social-logo">
+                            Health Is Everything
+                            <i class="fab fa-typo3"></i>
+                        </a>
+                    </div>
+                    <small class="website-rights">HPI(Health Portal India) © 2023</small>
+                    <div class="social-icons">
+                        <a
+                            class="social-icon-link facebook"
+                            href="/"
+                            target="_blank"
+                            aria-label="Facebook"
+                        >
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a
+                            class="social-icon-link instagram"
+                            href="/"
+                            target="_blank"
+                            aria-label="Instagram"
+                        >
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a
+                            class="social-icon-link youtube"
+                            href="/"
+                            target="_blank"
+                            aria-label="Youtube"
+                        >
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a
+                            class="social-icon-link twitter"
+                            href="/"
+                            target="_blank"
+                            aria-label="Twitter"
+                        >
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a
+                            class="social-icon-link twitter"
+                            href="/"
+                            target="_blank"
+                            aria-label="LinkedIn"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    <script>
+        // JavaScript to handle page navigation
+        function loadPage(page) {
+            const content = document.getElementById('content');
+            content.className = page;
+            content.innerHTML = `<h1>${page.charAt(0).toUpperCase() + page.slice(1)}</h1>`;
+        }
+
+        // Initial page load
+        loadPage('home');
+
+        // Add event listeners to navigation links
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const page = event.target.getAttribute('href').substring(1);
+                loadPage(page);
+            });
+        });
+
+        // Find the "Patient" link by its ID
+const patientLink = document.getElementById('patient-link');
+const doctorLink = document.getElementById('doctor-link');
+const adminLink = document.getElementById('admin-link');
+
+// Add a click event listener to the "Patient" link
+patientLink.addEventListener('click', event => {
+    event.preventDefault();
+
+    // Send an AJAX request to the Express server
+    fetch('/patient') // You may need to specify the full URL if the server is on a different domain
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .then(data => {
+            // Assuming the server sends back the HTML content to display
+            const content = document.getElementById('content');
+            content.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+});
+
+
+doctorLink.addEventListener('click', event => {
+    event.preventDefault();
+
+    // Send an AJAX request to the Express server
+    fetch('/doctor') // You may need to specify the full URL if the server is on a different domain
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .then(data => {
+            // Assuming the server sends back the HTML content to display
+            const content = document.getElementById('content');
+            content.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+});
+
+adminLink.addEventListener('click', event => {
+    event.preventDefault();
+
+    // Send an AJAX request to the Express server
+    fetch('/admin') // You may need to specify the full URL if the server is on a different domain
+        .then(response => {
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .then(data => {
+            // Assuming the server sends back the HTML content to display
+            const content = document.getElementById('content');
+            content.innerHTML = data;
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+        });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("subscription-form");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // You can add your subscription form submission logic here
+        const email = form.querySelector('input[name="email"]').value;
+
+        // Example: Display an alert with the email
+        alert(`Subscribed with email: ${email}`);
+    });
+});
+
+
+    </script>
+</body>
+</html>
