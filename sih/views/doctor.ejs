@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Doctor Information Form</title>
     <link rel="stylesheet" href="/css/doctor.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Doctor Information</h1>
@@ -25,13 +27,13 @@
             </div>
 
             <div class="form-group">
-                <label for="startOfDay">Start of Day:</label>
-                <input type="time" id="startOfDay" name="startOfDay" required>
+                <label for="working_hours">Working Hours:</label>
+                <input type="time" id="working_hours" name="working_hours" required>
             </div>
 
             <div class="form-group">
-                <label for="endOfDay">End of Day:</label>
-                <input type="time" id="endOfDay" name="endOfDay" required>
+                <label for="appoint_hours">Apoint Hours:</label>
+                <input type="time" id="appoint_hours" name="appoint_hours" required>
             </div>
 
             <div class="form-group">
@@ -39,14 +41,10 @@
                 <input type="text" id="holiday" name="holiday">
             </div>
 
-            <div class="form-group">
-                <label for="available">Available:</label>
-                <input type="text" id="available" name="available">
-            </div>
-
             <!-- Submit Button -->
             <button type="submit" id="submit-button">Submit</button>
         </form>
     </div>
 </body>
+
 </html>

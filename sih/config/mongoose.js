@@ -1,7 +1,7 @@
 //mongoose ko include kar liya
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 // ab connect krenge
-mongoose.connect('mongodb://127.0.0.1:27017/sih_db');
+mongoose.connect('mongodb+srv://smartindia:hack1234@cluster0.bxircbc.mongodb.net/sih_db');
 // connection ko acquire
 const db = mongoose.connection;
 
